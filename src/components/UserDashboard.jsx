@@ -21,8 +21,8 @@ const UserDashboard = () => {
       try {
         const [doctorRes, patientRes, appointmentRes] = await Promise.all([
           axios.get('https://hsptl-user-be.onrender.com/api/doctors/count'),
-          axios.get('https://hsptl-user-be.onrender.com/count'),
-          axios.get('https://hsptl-user-be.onrender.com/count'),
+          axios.get('https://hsptl-user-be.onrender.com/api/patients/count'),
+          axios.get('https://hsptl-user-be.onrender.com/api/appointments/count'),
         ]);
         setCounts({
           doctors: doctorRes.data.count || 0,
